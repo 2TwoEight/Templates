@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+</head>
+<body>
+
+    <h2>Formulaire de saisie</h2>
+    <form id="dataForm">
+        <input type="text" id="inputData" placeholder="Entrez vos données" required>
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <button id="goToAnotherPage">Aller à une autre page</button>
+
+    <script>
+        document.getElementById("dataForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+            const inputData = document.getElementById("inputData").value;
+            sessionStorage.setItem('userData', inputData); // Enregistrer les données dans sessionStorage
+            alert("Données enregistrées !");
+        });
+
+        document.getElementById("goToAnotherPage").addEventListener("click", function() {
+            window.location.href = "anotherPage.html"; // Rediriger vers une autre page
+        });
+    </script>
+
+</body>
+</html>

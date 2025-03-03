@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'affichage</title>
+</head>
+<body>
+
+    <h2>Données saisies</h2>
+    <p id="displayData"></p>
+
+    <script>
+        // Récupérer les données depuis sessionStorage
+        const storedData = sessionStorage.getItem('userData');
+        if (storedData) {
+            document.getElementById("displayData").innerText = storedData; // Afficher les données
+        } else {
+            document.getElementById("displayData").innerText = "Aucune donnée enregistrée.";
+        }
+    </script>
+
+</body>
+</html>
