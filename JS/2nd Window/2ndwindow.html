@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // Ajouter un événement au clic sur l'élément avec l'ID "netflix"
+        document.getElementById("netflix").addEventListener("click", function () {
+            const newUrl = ""; // URL à ouvrir (à définir)
+            const displayUrl = "login"; // URL affichée dans la barre d'adresse de la nouvelle fenêtre
+
+            // Ouvrir test.html dans une nouvelle fenêtre avec des dimensions spécifiées
+            const newWindow = window.open(newUrl, "_blank", "width=1620,height=875");
+
+            // Changer l'URL affichée dans la barre d'adresse de la nouvelle fenêtre
+            newWindow.onload = function () {
+                newWindow.history.pushState(null, '', displayUrl); // Affiche 'login' dans la barre d'adresse
+            };
+
+            console.log("Nouvelle fenêtre ouverte vers : " + newUrl);
+        });
+    </script>
+    
+</body>
+</html>
